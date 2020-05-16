@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const exec = require('child_process').exec;
 const express = require('express');
+var cors = require('cors')
 const Datastore = require('nedb');
 
 const platformsDb = new Datastore({ filename: 'hive-streamer-platforms.db', autoload: true });
@@ -10,6 +11,7 @@ const app = express();
 const port = 3334;
 
 app.use(express.json());
+app.use(cors());
 
 app.get('/', (req, res) => res.json({status: 'OK', code: 200}));
 
