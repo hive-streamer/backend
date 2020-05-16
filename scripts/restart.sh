@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 # Make sure Nginx configuration file is correct
 /usr/sbin/nginx -t -c /etc/nginx/nginx.conf

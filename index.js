@@ -27,7 +27,7 @@ app.post('/save', (req, res) => {
 app.listen(port, () => console.log(`Hive Streamer Backend listening at http://localhost:${port}`));
 
 const restartNginx = () => {
-  exec(path.resolve(__dirname, 'scripts', 'restart.sh'), (error, stdout, stderr) => {
+  exec(`sh ${path.resolve(__dirname, 'scripts', 'restart.sh')}`, (error, stdout, stderr) => {
     if (stdout)
       console.log(`stdout: ${stdout}`);
 
